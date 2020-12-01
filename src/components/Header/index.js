@@ -1,13 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { AppBar, Toolbar, Typography, Box, Grid } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Box, Grid, SvgIcon } from '@material-ui/core';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Container from '@material-ui/core/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-
 import useStyles from './Header.styles';
+
+import styles from './navigation.module.scss';
+
 function ElevationScroll(props) {
   const { children } = props;
   // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -51,27 +53,72 @@ export default function Navbar(props) {
 
                 <Grid item>
                   <Container direction='row'>
-                    <Link href='/signin'>
+                    <Link href='/'>
                       <Typography className={classes.link} variant='body2' disabled>
                         sign in
                       </Typography>
                     </Link>
-                    <Link href='/works'>
+                    <Link href='/'>
                       <Typography className={classes.link} variant='body2'>
                         works
                       </Typography>
                     </Link>
-                    <Link href='/exhibition'>
+                    <Link href='/'>
                       <Typography variant='body2' className={classes.link}>
                         exhibition
                       </Typography>
                     </Link>
-                    <Link href='/about'>
+                    <Link href='/'>
                       <Typography variant='body2' className={classes.link}>
                         about us
                       </Typography>
                     </Link>
-                    <FontAwesomeIcon icon={faBars} className={classes.link} />
+                    {/* <FontAwesomeIcon icon={faBars} className={classes.link} /> */}
+                    <div className={styles.navigation}>
+                      {/* <div className={styles.navigation__div}> */}
+                      <input
+                        type='checkbox'
+                        className={styles.navigation__checkbox}
+                        id='navi-toggle'
+                      />
+
+                      <label htmlFor='navi-toggle' className={styles.navigation__button}>
+                        <span className={styles.navigation__icon}>&nbsp;</span>
+                      </label>
+
+                      <div className={styles.navigation__background}>&nbsp;</div>
+                      {/* </div> */}
+
+                      <nav className={styles.navigation__nav}>
+                        <ul className={styles.navigation__list}>
+                          <li className={styles.navigation__item}>
+                            <a href='#' className={styles.navigation__link}>
+                              <span>01</span>Works
+                            </a>
+                          </li>
+                          <li className={styles.navigation__item}>
+                            <a href='#' className={styles.navigation__link}>
+                              <span>02</span>Exhibition
+                            </a>
+                          </li>
+                          <li className={styles.navigation__item}>
+                            <a href='#' className={styles.navigation__link}>
+                              <span>03</span>About Us
+                            </a>
+                          </li>
+                          <li className={styles.navigation__item}>
+                            <a href='#' className={styles.navigation__link}>
+                              <span>04</span>Resources
+                            </a>
+                          </li>
+                          <li className={styles.navigation__item}>
+                            <a href='#' className={styles.navigation__link}>
+                              <span>05</span>Contact Us
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
                   </Container>
                 </Grid>
               </Grid>
