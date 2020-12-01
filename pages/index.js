@@ -1,3 +1,21 @@
+import { Container } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
+import LandingScreen from '../src/screens/LandingScreen';
+import Header from '../src/components/Header';
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    height: '100vh',
+  },
+}));
+
 export default function Home() {
-  return <h1>Home Screen</h1>;
+  const classes = useStyles();
+
+  return (
+    <Container className={classes.container}>
+      <Header />
+      <LandingScreen />
+    </Container>
+  );
 }
