@@ -1,4 +1,6 @@
-import { Grid, Container, Typography, Button, Link } from '@material-ui/core';
+import { useEffect } from 'react';
+import { Grid, Container, Typography, Button } from '@material-ui/core';
+import { Link } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -6,6 +8,7 @@ import useStyles from './LandingScreen.styles';
 
 export default function LandingScreen() {
   const classes = useStyles();
+
   return (
     <>
       <Grid
@@ -28,7 +31,14 @@ export default function LandingScreen() {
           Join Us
         </Button>
 
-        <Link href='#' className={classes.scrollButton}>
+        <Link
+          to='about-section'
+          spy={true}
+          smooth={true}
+          offset={-80}
+          duration={500}
+          className={classes.scrollButton}
+        >
           <Typography variant='body2'>
             Scroll Down <FontAwesomeIcon icon={faArrowDown} />
           </Typography>
@@ -89,6 +99,8 @@ export default function LandingScreen() {
           </Grid>
         </Grid>
       </section>
+
+      {/* BLUE SECTION */}
     </>
   );
 }
