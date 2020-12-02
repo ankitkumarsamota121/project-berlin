@@ -40,12 +40,14 @@ export default makeStyles((theme) => ({
     margin: '2rem 0',
   },
   blueSection: {
+    // display: 'block',
     background: theme.palette.secondary.main,
+    margin: '2.5rem 0',
   },
   blueSectionGrid: {
     color: theme.palette.common.white,
     padding: '5rem 0',
-    margin: '0.5rem 0',
+    // marginTop: '0.5rem',
   },
   imageContainer: {
     width: '50%',
