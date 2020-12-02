@@ -8,16 +8,19 @@ export default makeStyles((theme) => ({
     // paddingBottom:
     // height: '100%',
   },
-  image: {
-    border: `1px solid ${theme.palette.grey[500]}`,
-    padding: '4px',
+  imageContainer: {
+    boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.2)',
     borderRadius: '12px',
+    padding: '12px',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  image: {
     width: '100%',
-    height: '100%',
   },
   pagination: {
+    // marginTop: theme.spacing(2),
     // '& > *': {
-    //   marginTop: theme.spacing(2),
     // },
   },
   button: {
@@ -25,6 +28,6 @@ export default makeStyles((theme) => ({
     padding: '0.8rem 3rem',
   },
   bottomGrid: {
-    marginTop: '1rem',
+    marginTop: '2rem',
   },
 }));

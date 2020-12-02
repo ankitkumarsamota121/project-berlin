@@ -23,9 +23,11 @@ export default function TabPanel(props) {
     >
       {value === index && (
         <Grid container className={classes.grid} spacing={4} justify='center'>
-          {[...Array(12).keys()].map(() => (
-            <Grid item md={3}>
-              <img src='/images/image.png' className={classes.image} />
+          {[...Array(12).keys()].map((val) => (
+            <Grid item md={3} key={val}>
+              <div className={classes.imageContainer}>
+                <img src='/images/image.png' className={classes.image} />
+              </div>
             </Grid>
           ))}
         </Grid>
