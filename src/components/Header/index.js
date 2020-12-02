@@ -62,7 +62,7 @@ export default function Navbar(props) {
                         works
                       </Typography>
                     </Link>
-                    <Link href='/'>
+                    <Link href='/exhibition'>
                       <Typography variant='body2' className={classes.link}>
                         exhibition
                       </Typography>
