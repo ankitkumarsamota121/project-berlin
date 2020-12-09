@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import { animateScroll as scroll } from 'react-scroll';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { AppBar, Toolbar, Typography, Box, Grid, SvgIcon } from '@material-ui/core';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
@@ -12,13 +14,9 @@ import styles from './navigation.module.scss';
 
 function ElevationScroll(props) {
   const { children } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
-    // target: window ? window() : undefined,
   });
 
   return React.cloneElement(children, {
@@ -28,28 +26,29 @@ function ElevationScroll(props) {
 
 ElevationScroll.propTypes = {
   children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  // window: PropTypes.func,
 };
 
 export default function Navbar(props) {
   const classes = useStyles();
+  const router = useRouter();
+
+  const logoClickHandler = () => {
+    if (router.pathname === '/') {
+      scroll.scrollToTop();
+    } else {
+      router.push('/');
+    }
+  };
   return (
     <>
-      {/* <CssBaseline /> */}
       <ElevationScroll {...props}>
         <AppBar color='inherit'>
           <Container>
             <Toolbar>
               <Grid container justify='space-between' alignItems='center'>
-                <Link href='/'>
-                  <Box className={classes.logoBox}>
-                    <img src='/images/logo.svg' className={classes.logo} />
-                  </Box>
-                </Link>
+                <Box className={classes.logoBox} onClick={logoClickHandler}>
+                  <img src='/images/logo.svg' className={classes.logo} />
+                </Box>
 
                 <Grid item>
                   <Container direction='row'>
@@ -58,17 +57,17 @@ export default function Navbar(props) {
                         sign in
                       </Typography>
                     </Link>
-                    <Link href='/'>
+                    <Link href='/works'>
                       <Typography className={classes.link} variant='body2'>
                         works
                       </Typography>
                     </Link>
-                    <Link href='/'>
+                    <Link href='/exhibition'>
                       <Typography variant='body2' className={classes.link}>
                         exhibition
                       </Typography>
                     </Link>
-                    <Link href='/'>
+                    <Link href='/about'>
                       <Typography variant='body2' className={classes.link}>
                         about us
                       </Typography>
