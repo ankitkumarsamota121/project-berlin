@@ -114,6 +114,14 @@ let theme = createMuiTheme({
     },
     caption: {},
     overline: {},
+    overrides: {
+      MuiGridListTile: {
+        tile: {
+          height: '20rem',
+          overflow: 'hidden',
+        },
+      },
+    },
   },
 });
 

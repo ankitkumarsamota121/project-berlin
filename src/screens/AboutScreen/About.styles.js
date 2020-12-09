@@ -33,4 +33,7 @@ export default makeStyles((theme) => ({
   whiteText: {
     color: theme.palette.common.white,
   },
+  teamsSection: {
+    padding: '4rem 0',
+  },
 }));

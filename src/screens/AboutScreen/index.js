@@ -1,5 +1,7 @@
 import React from 'react';
 import { Grid, Typography, Container, Button, Link } from '@material-ui/core';
+
+import Team from '../../components/Team';
 import useStyles from './About.styles';
 
 function AboutScreen() {
@@ -44,6 +46,24 @@ function AboutScreen() {
               </Typography>
             </Grid>
           </Grid>
+        </Container>
+      </section>
+
+      <section className={classes.teamsSection}>
+        <Container className={classes.teamsContainer}>
+          <Typography variant='h5' color='primary'>
+            Our Team
+          </Typography>
+          <Typography variant='body1'>
+            We do this all this with the help of a great team who are always ready to explore new
+            dimension of the world.
+          </Typography>
+          <Team title='Co-Founders' />
+          <Team title='2020' />
+          <Team title='2019' />
+          <Team title='2018' />
+          <Team title='2017' />
+          <Team title='2016' />
         </Container>
       </section>
     </>
