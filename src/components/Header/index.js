@@ -8,8 +8,9 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Container from '@material-ui/core/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import useStyles from './Header.styles';
+import Navigation from '../Navigation';
 
+import useStyles from './Header.styles';
 import styles from './navigation.module.scss';
 
 function ElevationScroll(props) {
@@ -73,8 +74,7 @@ export default function Navbar(props) {
                       </Typography>
                     </Link>
                     {/* <FontAwesomeIcon icon={faBars} className={classes.link} /> */}
-                    <div className={styles.navigation}>
-                      {/* <div className={styles.navigation__div}> */}
+                    {/* <div className={styles.navigation}>
                       <input
                         type='checkbox'
                         className={styles.navigation__checkbox}
@@ -86,7 +86,6 @@ export default function Navbar(props) {
                       </label>
 
                       <div className={styles.navigation__background}>&nbsp;</div>
-                      {/* </div> */}
 
                       <nav className={styles.navigation__nav}>
                         <ul className={styles.navigation__list}>
@@ -117,7 +116,8 @@ export default function Navbar(props) {
                           </li>
                         </ul>
                       </nav>
-                    </div>
+                    </div> */}
+                    <Navigation />
                   </Container>
                 </Grid>
               </Grid>
