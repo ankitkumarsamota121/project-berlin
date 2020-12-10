@@ -1,46 +1,46 @@
 import React, { useRef } from 'react';
 import { motion, useCycle } from 'framer-motion';
-import { useDimensions } from '../../hooks/useDimensions';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 import MenuToggle from './MenuToggle';
 import NavList from './NavList';
 
-const sidebar = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+import useStyles from './Navigation.styles';
+
+const navigation = {
+  open: (scale = 300) => ({
+    scale: scale,
     transition: {
-      delay: 0.4,
-      type: 'spring',
-      stiffness: 20,
-      restDelta: 2,
+      duration: 0.5,
     },
   }),
   closed: {
-    clipPath: 'circle(30px at 40px 40px)',
+    scale: 0,
     transition: {
-      delay: 0.4,
-      type: 'spring',
-      stiffness: 400,
-      damping: 40,
+      duration: 0.5,
     },
   },
 };
 
 const Navigation = () => {
+  const classes = useStyles();
   const [isOpen, toggleOpen] = useCycle(false, true);
-  // const containerRef = useRef(null);
-  // const { height } = useDimensions(containerRef);
+  const { height, width } = useWindowDimensions();
+  const scale = Math.max(height, width);
 
   return (
-    <motion.nav
+    <motion.div
       initial={false}
       animate={isOpen ? 'open' : 'closed'}
-      // custom={height}
+      custom={scale}
       // ref={containerRef}
+      className={classes.div}
     >
-      <motion.div className='background' variants={sidebar} />
-      {/* <NavList /> */}
+      <motion.div className={classes.background} variants={navigation} />
+      <div>
+        <NavList />
+      </div>
       <MenuToggle toggle={() => toggleOpen()} />
-    </motion.nav>
+    </motion.div>
   );
 };
 

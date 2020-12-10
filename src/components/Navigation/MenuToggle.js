@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+import useStyles from './Navigation.styles';
+
 const Path = (props) => (
   <motion.path
     fill='transparent'
@@ -12,8 +14,10 @@ const Path = (props) => (
 );
 
 const MenuToggle = ({ toggle }) => {
+  const classes = useStyles();
+
   return (
-    <button onClick={toggle} className='button__special'>
+    <button onClick={toggle} className={classes.button}>
       <svg width='23' height='23' viewBox='0 0 23 23'>
         <Path
           variants={{
