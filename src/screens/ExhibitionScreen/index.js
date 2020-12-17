@@ -3,28 +3,17 @@ import { Grid, Typography, Container, Button, Link } from '@material-ui/core';
 import useStyles from './ExhibitionScreen.styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import TitleSection from '../../components/TitleSection';
 
 function ExhibitionScreen() {
   const classes = useStyles();
   return (
     <>
-      <Grid
-        container
-        direction='column'
-        justify='center'
-        alignItems='center'
-        className={classes.grid}
-      >
-        <Typography variant='h1' className={classes.title}>
-          IRIDESCENCE
-        </Typography>
-        <Grid item container direction='column' fluid='true' className={classes.container}>
-          <Typography variant='body1' className={classes.description}>
-            Design Tab’s annual design exhibition oraganised for two days during annual technical
-            fest INNOVISSION
-          </Typography>
-        </Grid>
-      </Grid>
+      <TitleSection
+        title='IRIDESCENCE'
+        description='Design Tab’s annual design exhibition oraganised for two days during annual technical fest
+        INNOVISSION'
+      />
 
       <Container>
         <Grid container className={classes.aboutGrid} alignItems='center'>

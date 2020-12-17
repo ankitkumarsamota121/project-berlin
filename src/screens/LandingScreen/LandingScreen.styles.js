@@ -1,24 +1,9 @@
 import { makeStyles } from '@material-ui/core';
 
 export default makeStyles((theme) => ({
-  grid: {
-    height: '95vh',
-  },
-  container: {
-    maxWidth: '37.5rem',
-    textAlign: 'center',
-    margin: '2rem 0',
-  },
-  title: {
-    fontWeight: 800,
-    color: theme.palette.primary.main,
-  },
   button: {
     padding: '1rem 3rem',
     borderRadius: '0.75rem',
-  },
-  description: {
-    color: theme.palette.grey[600],
   },
   scrollButton: {
     fontSize: '0.5rem',
@@ -36,10 +21,13 @@ export default makeStyles((theme) => ({
       color: theme.palette.primary.main,
     },
   },
-  aboutGrid: {
-    margin: '2rem 0',
+
+  aboutContainer: {
+    margin: '4rem 0',
+    height: '25rem',
   },
-  blueSection: {
+
+  coloredSection: {
     // display: 'block',
     background: theme.palette.secondary.main,
     margin: '2.5rem 0',
@@ -50,13 +38,15 @@ export default makeStyles((theme) => ({
     // marginTop: '0.5rem',
   },
   imageContainer: {
-    width: '50%',
+    width: '100%',
+    height: '25rem',
+    display: 'flex',
+    justifyContent: 'center',
+    // overflow: 'hidden',
   },
   image: {
     width: '100%',
-  },
-  descriptionContainer: {
-    width: '50%',
+    // height: '100%',
   },
   heading: {
     textTransform: 'uppercase',

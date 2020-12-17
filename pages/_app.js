@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/globals.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Root from '../src/redux/Root';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';

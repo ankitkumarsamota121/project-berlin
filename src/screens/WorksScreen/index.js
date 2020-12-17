@@ -3,6 +3,7 @@ import { Grid, Typography, Button, Paper, Tabs, Tab } from '@material-ui/core';
 import { Link } from 'react-scroll';
 import TabPanel from '../../components/TabPanel';
 import useStyles from './WorksScreen.styles';
+import TitleSection from '../../components/TitleSection';
 
 function WorksScreen() {
   const classes = useStyles();
@@ -16,23 +17,11 @@ function WorksScreen() {
 
   return (
     <>
-      <Grid
-        container
-        direction='column'
-        justify='center'
-        alignItems='center'
-        className={classes.grid}
-      >
-        <Typography variant='h1' className={classes.title}>
-          Our Works
-        </Typography>
-        <Grid item container direction='column' fluid='true' className={classes.container}>
-          <Typography variant='body1' className={classes.description}>
-            Our club has people with diverse interest in diffrent design fields like Graphic design,
-            Product design, UI/UX design, 3D modeling, Fine arts and more.
-          </Typography>
-        </Grid>
-      </Grid>
+      <TitleSection
+        title='Our Works'
+        description='Our club has people with diverse interest in diffrent design fields like Graphic design,
+            Product design, UI/UX design, 3D modeling, Fine arts and more.'
+      />
       <Paper className={classes.tabsPaper}>
         <Tabs
           value={value}
